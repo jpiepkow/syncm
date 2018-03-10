@@ -7,7 +7,11 @@ defmodule SyncM.MixProject do
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      description:
+        "SyncM helps by setting up an interface to dynamically sync mnesia across nodes. Mnesia nodes are added to 
+        the schema dynamically when started and copy over existing tables from another node member.",
     ]
   end
 
@@ -22,8 +26,14 @@ defmodule SyncM.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
+    ]
+  end
+  defp package do
+    [
+      maintainers: ["Jordan Piepkow"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/jpiepkow/syncm"}
     ]
   end
 end
