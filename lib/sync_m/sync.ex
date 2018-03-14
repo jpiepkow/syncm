@@ -65,7 +65,7 @@ defmodule SyncM.Sync do
   end
 
   def add_table(name, attrs) do
-    case Mnesia.create_table(name, attributes: attrs) do
+    case Mnesia.create_table(name, attrs) do
       {:atomic, :ok} -> :ok
       {:aborted, {:already_exists, _}} -> :ok
       {:aborted, {:already_exists, _, _}} -> :ok
