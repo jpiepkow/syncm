@@ -1,7 +1,9 @@
 # SyncM
 
 Pull requests and issues are very welcomed!
+
 TODO: Handle split-brain
+
 Handle dead nodes
 
 ## Installation
